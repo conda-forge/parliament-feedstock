@@ -1,5 +1,5 @@
 {% set name = "parliament" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cf40d5f5732bcf831fdb1a13f71c3cf4f3bdb8c8d9685592ecdd6d84675b947e
+  sha256: f94ca078a90a56e8d22fb3c551daef7d6e9d4157e6032c7e7a1226d4280edd65
 
 build:
   number: 0
