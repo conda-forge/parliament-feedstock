@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 13e0f21048c3f2f6dbc3e90035421a7f2e35eda55c829794ec3f410140ce6740
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - parliament=parliament.cli:main
@@ -21,12 +21,12 @@ requirements:
   host:
     - nose
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - boto3
     - jmespath
     - json-cfg
-    - python >=3.6
+    - python >={{ python_min }}
     - pyyaml
 
 test:
@@ -38,6 +38,7 @@ test:
     - parliament --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/duo-labs/parliament
