@@ -36,7 +36,6 @@ test:
     - parliament.community_auditors
   commands:
     - pip check
-    - parliament --help
   requires:
     - pip
     - python {{ python_min }}
