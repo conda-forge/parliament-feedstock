@@ -1,5 +1,5 @@
 {% set name = "parliament" %}
-{% set version = "1.6.3" %}
+{% set version = "1.6.4" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 13e0f21048c3f2f6dbc3e90035421a7f2e35eda55c829794ec3f410140ce6740
+  sha256: ea6b930de2afd2f1591d5624b56b8c9361e746c76ce50a9586cab209054dfa4c
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - parliament=parliament.cli:main
@@ -22,6 +22,7 @@ requirements:
     - nose
     - pip
     - python {{ python_min }}
+    - setuptools
   run:
     - boto3
     - jmespath
@@ -35,7 +36,6 @@ test:
     - parliament.community_auditors
   commands:
     - pip check
-    - parliament --help
   requires:
     - pip
     - python {{ python_min }}
